@@ -87,6 +87,7 @@ const { defineConfig } = require("cypress");
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
 
 module.exports = defineConfig({
+  projectId: "1du453",
 
   //junit report
 
@@ -105,80 +106,80 @@ module.exports = defineConfig({
 
 
   //mocha report
-  // reporter: 'cypress-mochawesome-reporter',
+  reporter: 'cypress-mochawesome-reporter',
 
-  // reporterOptions: {
+  reporterOptions: {
 
-  // reportDir: 'test-report',
-  // overwrite:  false,
-  // saveJson: true,
-  // saveHtml: true,
+  reportDir: 'test-report',
+  overwrite:  false,
+  saveJson: true,
+  saveHtml: true,
 
-  // reportFilename: 'cypressreport',
-  // timestamp: 'yyyy_mm_dd_hh_MM',
+  reportFilename: 'cypressreport',
+  timestamp: 'yyyy_mm_dd_hh_MM',
 
 
 
-  //   charts: true,
+    charts: true,
 
-  //   reportPageTitle: 'custom-title',
+    reportPageTitle: 'custom-title',
 
-  //   embeddedScreenshots: true,
+    embeddedScreenshots: true,
 
-  //   inlineAssets: true,
+    inlineAssets: true,
 
-  //   saveAllAttempts: false,
+    saveAllAttempts: false,
 
-  // },
+  },
 
 
   //generate multi report
   
 
   
-  reporter: 'cypress-multi-reporters',
+  // reporter: 'cypress-multi-reporters',
 
  
 
-  reporterOptions: {
+  // reporterOptions: {
 
-    reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
+  //   reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
 
-    mochawesomeReporterOptions: {
+  //   mochawesomeReporterOptions: {
 
 
 
 
      
 
-      reportDir: 'cypress/reports',
+  //     reportDir: 'cypress/reports',
 
-      overwrite: false,
+  //     overwrite: false,
 
-      saveJson: true,
+  //     saveJson: true,
 
-      saveHtml: true,
-
-
+  //     saveHtml: true,
 
 
-      reportFilename: 'cypressreport',
 
-      timestamp: 'yyyy_mm_dd_hh_MM',
 
-      charts: true,
+  //     reportFilename: 'cypressreport',
 
-      reportPageTitle: 'custom-title',
+  //     timestamp: 'yyyy_mm_dd_hh_MM',
 
-      embeddedScreenshots: true,
+  //     charts: true,
 
-      inlineAssets: true,
+  //     reportPageTitle: 'custom-title',
 
-      saveAllAttempts: false,
+  //     embeddedScreenshots: true,
 
-    },
+  //     inlineAssets: true,
 
-  },
+  //     saveAllAttempts: false,
+
+    // },
+
+  // },
   
     
   mochaJunitReporterReporterOptions: {

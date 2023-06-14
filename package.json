@@ -12,7 +12,9 @@
     "allure:report": "allure generate allure-results --clean -o allure-report",
     "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
 
-    "cy:parallel" : "cypress-parallel -s cypress:execution-allure -t 8 -d 'cypress/E2E/*.cy.js'"
+    "cy:parallel" : "cypress-parallel -s cypress:execution-allure -t 8 -d 'cypress/E2E/*.cy.js'",
+
+    "cypress:-Dashboard": "cypress run --browser chrome --headed --env tags=@sanity --config video=false --spec cypress/E2E/features/amazon1.feature --record --key 6aa03662-c2b2-48c3-8e86-11590e804232"
 
   },
   "author": "",
