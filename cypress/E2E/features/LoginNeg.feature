@@ -21,8 +21,18 @@ Feature: Login test Suite
         Examples:
             | email          |
             | tarika+16@noum |
-    
+
     Scenario Outline: Verify the login button is disabled by default
         Given User is on Login page1
         Then Login button should be disabled
-       
+
+    Scenario Outline: Verify the ivalid OTP toast message
+        Given User is on Login page2
+        When User enters valid email as "<email>"
+        Then Clicks on the Login button
+        When user enters invalid OTP as "<otp>"
+        Then Clicks on next button
+        Then Validate the toast message
+        Examples:
+            | email                      |otp|
+            | tarika+16@noumena.global   |2345|

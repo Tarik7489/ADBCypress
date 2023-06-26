@@ -11,7 +11,7 @@ When("User types invalid email as {string}", (email) => {
 
 });
 
-Then('Clicks on the Login button', () => {
+Then('Clicks on the Login button1', () => {
 
     cy.get('button[type="submit"]').click()
 
@@ -64,6 +64,31 @@ Then('Login button should be disabled', () => {
     cy.get('button[type="submit"]').should('not.be.enabled')
 
 });
+
+//verify the error message when user enters invalid otp
+Given("User is on Login page2", () => {
+
+    cy.visit("https://noumena-web-staging.web.app/login")
+});
+When("User enters valid email as {string}", (email) => {
+
+    cy.get('input[name="email"]').type(email)
+})
+Then('Clicks on the Login button', () => {
+
+    cy.get('button[type="submit"]').click()
+
+});
+When("user enters invalid OTP as {string}", (otp) => {
+
+    cy.get('input[data-cy="OtpInput-cy-0"]').type(otp)
+})
+Then("Clicks on next button",()=>{
+    cy.get('button[data-testid="otp-submit-button"]').click()
+})
+Then("Validate the toast message",()=>{
+    cy.contains('Invalid code. Please try again.').should('be.visible')
+})
 
 
 
